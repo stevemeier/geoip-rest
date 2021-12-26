@@ -12,6 +12,9 @@ while true
   # Query constructed $IPADDR
   echo ${IPADDR}
   curl http://127.1:8000/${IPADDR}
+  if [ $? -gt 0 ]; then
+    break
+  fi
   echo
 
   sleep 0.1
